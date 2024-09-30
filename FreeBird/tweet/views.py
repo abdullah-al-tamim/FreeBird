@@ -42,4 +42,4 @@ def tweet_delete(request, tweet_id):
     if request.method == 'POST':
         tweet.delete()
         return redirect('tweet_list')
-    
+    return render(request, 'tweet_confirm_delete.html', {'tweet': tweet})
