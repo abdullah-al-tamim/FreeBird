@@ -11,10 +11,10 @@
     {%endif%}
 
   </h2>
-  <form action="post" enctype="multipart/form-data" class="form">
+  <form method="post" enctype="multipart/form-data" class="form">
+    {% csrf_token %}
     {{form.as_p}}
     <button class="btn btn-warning" type="Submit">Submit</button>
-    <a href="{% url 'tweet_list'%}">Back to Tweet</a>
   </form>
-
+  <a href="{% url 'tweet_list'%}">Back to Tweet</a>
 {% endblock content %}
